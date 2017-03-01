@@ -2,13 +2,12 @@
   title = ' DEISA pw benchmark '
   calculation = 'scf'
   restart_mode = 'from_scratch'
-  tprnfor = .TRUE.
-  etot_conv_thr = 1.d-8
+  tprnfor = .FALSE.
   prefix = 'ausurf'
   pseudo_dir = './pseudo/'
   outdir = './save/'
+  verbosity='high'
   disk_io = 'none'
-  verbosity = 'high'
 /
 &SYSTEM
   ibrav = 8
@@ -18,7 +17,6 @@
   nat       =    54
   ntyp      =     1
   ecutwfc   = 25.0
-  ecutrho   = 200.0
   occupations  = 'smearing'
   smearing     = 'marzari-vanderbilt'
   degauss   = 0.05
@@ -36,8 +34,8 @@
 /
 ATOMIC_SPECIES
   Au  196.96  Au.pbe-nd-van.UPF
-K_POINTS (automatic)
-  2 2 1 1 1 0
+K_POINTS gamma
+
 ATOMIC_POSITIONS (crystal)
 Au   0.000000 0.000000 0.000000
 Au   0.222222 0.111111 0.121259
